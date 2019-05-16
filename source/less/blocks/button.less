@@ -1,0 +1,35 @@
+.button {
+  line-height: 20px;
+  font-weight: 700;
+  color: @grey-color;
+  background-color: @white-color;
+  text-transform: uppercase;
+
+  &--reviews {
+    font-size: 18px;
+  }
+
+  &--contacts {
+    font-size: 18px;
+  }
+
+  &--manufacture {
+    line-height: 16px;
+  }
+
+  &--form {
+    line-height: 16px;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .button {
+    &--reviews {
+      font-size: 17px;
+    }
+
+    &--contacts {
+      font-size: 17px;
+    }
+  }
+}
