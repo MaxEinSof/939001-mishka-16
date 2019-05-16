@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Каталог товаров</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="fonts/opensans.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link href="fonts/opensansbold.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link href="css/style.min.css" rel="stylesheet">
   </head>
   <body>
 
@@ -47,7 +51,9 @@
     </header>
 
     <main class="main-content">
-      <h1 class="main-content__title">Каталог товаров</h1>
+      <div class="main-content__title-container">
+        <h1 class="main-content__title">Каталог товаров</h1>
+      </div>
       <ul class="catalog">
         <li class="catalog-item">
           <a href="#">
@@ -107,31 +113,7 @@
           <img class="manufacture__prewiev-image" src="img/video-mobile@1x.jpg" alt="Процесс производства">
         </div>
         <p class="manufacture__text">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
-        <a class="manufacture__button button" href="#">Сделать заказ</a>
-      </section>
-
-      <section class="modal">
-        <h2 class="modal__title">Добавить в корзину</h2>
-        <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
-          <fieldset class="modal__options">
-            <legend class="modal__options-title">Выберите размер:</legend>
-            <ul class="modal__options-list">
-              <li class="modal__option-item">
-                <label class="modal__option-label" for="size-s">S</label>
-                <input class="visually-hidden modal__option-input" type="radio" name="size" id="size-s" value="S" aria-label="Размер S" checked>
-              </li>
-              <li class="modal__option-item">
-                <label class="modal__option-label" for="size-m">M</label>
-                <input class="visually-hidden modal__option-input" type="radio" name="size" id="size-m" value="M" aria-label="Размер M">
-              </li>
-              <li class="modal__option-item">
-                <label class="modal__option-label" for="size-l">L</label>
-                <input class="visually-hidden modal__option-input" type="radio" name="size" id="size-l" value="L" aria-label="Размер L">
-              </li>
-            </ul>
-          </fieldset>
-          <button class="modal__button" type="submit">Добавить</button>
-        </form>
+        <a class="manufacture__button button button--manufacture" href="#">Сделать заказ</a>
       </section>
     </main>
 
@@ -175,6 +157,33 @@
         </svg>
       </a>
     </footer>
+
+    <section class="modal">
+      <h2 class="modal__title">Добавить в корзину</h2>
+      <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+        <fieldset class="modal__options">
+          <legend class="modal__options-title">Выберите размер:</legend>
+          <ul class="modal__options-list">
+            <li class="modal__option-item">
+              <label class="modal__option-label" for="size-s">S</label>
+              <input class="visually-hidden modal__option-input" type="radio" name="size" id="size-s" value="S" aria-label="Размер S" checked>
+            </li>
+            <li class="modal__option-item">
+              <label class="modal__option-label" for="size-m">M</label>
+              <input class="visually-hidden modal__option-input" type="radio" name="size" id="size-m" value="M" aria-label="Размер M">
+            </li>
+            <li class="modal__option-item">
+              <label class="modal__option-label" for="size-l">L</label>
+              <input class="visually-hidden modal__option-input" type="radio" name="size" id="size-l" value="L" aria-label="Размер L">
+            </li>
+          </ul>
+        </fieldset>
+        <button class="modal__button" type="submit">Добавить</button>
+      </form>
+    </section>
+
+    <script src="js/picturefill.min.js"></script>
+    <script src="js/script.min.js"></script>
 
   </body>
 </html>

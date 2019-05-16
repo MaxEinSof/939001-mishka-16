@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Вязание на заказ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="fonts/opensans.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link href="fonts/opensansbold.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link href="css/style.min.css" rel="stylesheet">
   </head>
   <body>
 
@@ -47,7 +51,9 @@
     </header>
 
     <main class="main-content">
-      <h1 class="main-content__title">Вязание на заказ</h1>
+      <div class="main-content__title-container">
+        <h1 class="main-content__title">Вязание на заказ</h1>
+      </div>
 
       <form class="order-form" action="https://echo.htmlacademy.ru" method="post">
         <p class="order-form__text">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
@@ -115,14 +121,14 @@
         <fieldset class="order-form__contact-info">
           <legend class="visually-hidden">Контактные данные</legend>
           <p class="order-form__contact-detail">
-            <label class="order-form__label" for="tel-field">Tел</label>
-            <input class="order-form__input" type="tel" name="tel" id="tel-field" placeholder="+7 ХХХ ХХХ ХХ ХХ*">
+            <label class="order-form__legend" for="tel-field">Tел</label>
+            <input class="order-form__input order-form__input--tel" type="tel" name="tel" id="tel-field" placeholder="+7 ХХХ ХХХ ХХ ХХ*">
             <svg class="order-form__tel-icon" width="25" height="24">
               <use xlink:href="#sprite-icon-phone"></use>
             </svg>
           </p>
           <p class="order-form__contact-detail">
-            <label class="order-form__label" for="email-field">E-mail</label>
+            <label class="order-form__legend" for="email-field">E-mail</label>
             <input class="order-form__input" type="email" name="email" id="email-field" placeholder="Ваш Email*">
             <svg class="order-form__email-icon" width="32" height="21">
               <use xlink:href="#sprite-icon-mail"></use>
@@ -138,7 +144,7 @@
 
         <small class="order-form__footnote">*Поля обязательны для заполнения</small>
 
-        <button class="order-form__button button" type="submit">Отправить заказ</button>
+        <button class="order-form__button button button--form" type="submit">Отправить заказ</button>
       </form>
     </main>
 
@@ -182,6 +188,9 @@
         </svg>
       </a>
     </footer>
+
+    <script src="js/picturefill.min.js"></script>
+    <script src="js/script.min.js"></script>
 
   </body>
 </html>
