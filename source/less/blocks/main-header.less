@@ -1,12 +1,29 @@
+.main-header__logo-image {
+  width: 86px;
+  height: 35px;
+}
+
 .main-header__shipping-text {
   display: none;
 }
 
 @media (min-width: @tablet-width) {
+  .main-header__logo-image {
+    width: 112px;
+    height: 46px;
+  }
+
   .main-header__shipping-text {
     display: block;
     font-size: 15px;
     font-weight: 400;
     color: @grey-color;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-header__logo-image {
+    width: 149px;
+    height: 72px;
   }
 }
