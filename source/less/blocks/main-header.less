@@ -1,6 +1,35 @@
+.main-header {
+  padding-top: 22px;
+}
+
+.main-header__logo {
+  display: block;
+  width: 86px;
+  margin: 0 auto;
+  margin-bottom: 22px;
+}
+
+.main-header__logo[href]:hover,
+.main-header__logo[href]:focus {
+  opacity: 0.6;
+}
+
+.main-header__logo[href]:active {
+  opacity: 0.3;
+}
+
 .main-header__logo-image {
+  display: block;
   width: 86px;
   height: 35px;
+}
+
+.main-header__logo picture {
+  pointer-events: none;
+}
+
+.main-header__additional-navigation {
+  display: none;
 }
 
 .main-header__shipping-text {
@@ -8,22 +37,123 @@
 }
 
 @media (min-width: @tablet-width) {
+  .main-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 0;
+  }
+
+  .main-header__logo-container {
+    order: 1;
+    flex-grow: 1;
+    padding-top: 22px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-left: 49px;
+    border-bottom: 1px solid rgba(@grey-color, 0.1);
+  }
+
+  .main-header__logo {
+    width: auto;
+    margin: 0;
+  }
+
   .main-header__logo-image {
     width: 112px;
     height: 46px;
   }
 
+  .main-header__user-navigation {
+    order: 2;
+    max-width: 72%;
+  }
+
+  .main-header__main-navigation {
+    order: 3;
+    box-sizing: border-box;
+    width: 62%;
+    padding-top: 17px;
+    padding-left: 49px;
+    background-color: @light-gray-color;
+
+    &--index-page {
+      background-color: #f9f9f9;
+    }
+  }
+
+  .main-header__container {
+    order: 4;
+    width: 38%;
+    background-color: @light-gray-color;
+
+    &--index-page {
+      background-color: #f9f9f9;
+    }
+  }
+
   .main-header__shipping-text {
     display: block;
+    margin: 0;
+    padding-top: 17px;
+    padding-right: 50px;
     font-size: 15px;
     font-weight: 400;
     color: @grey-color;
+    text-align: right;
   }
 }
 
 @media (min-width: @desktop-width) {
+  .main-header__logo-container {
+    order: 2;
+    flex-grow: 0;
+    padding: 0;
+    padding-top: 9px;
+    padding-right: 101px;
+    padding-left: 40px;
+    border-bottom: none;
+  }
+
   .main-header__logo-image {
     width: 149px;
     height: 72px;
+  }
+
+  .main-header__user-navigation {
+    order: 3;
+    width: 385px;
+    margin-right: auto;
+  }
+
+  .main-header__main-navigation {
+    order: 1;
+    display: flex;
+    flex-grow: 0;
+    width: 445px;
+    margin-left: auto;
+    padding-top: 0;
+    padding-left: 0;
+    background-color: transparent;
+  }
+
+  .main-header__container {
+    order: 4;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid rgba(@grey-color, 0.1);
+  }
+
+  .main-header__additional-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 750px;
+  }
+
+  .main-header__shipping-text {
+    box-sizing: border-box;
+    width: 400px;
+    margin-right: auto;
   }
 }

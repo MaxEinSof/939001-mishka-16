@@ -1,36 +1,134 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 410px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 46px;
+  padding-left: 30px;
+  text-align: center;
+  background-color: @white-color;
+  border: 1px solid #c6c6c6;
+  box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);
+
+  &--show {
+    display: block;
+  }
+}
+
 .modal__title {
+  margin: 0;
+  margin-bottom: 12px;
   font-size: 25px;
   line-height: 30px;
   text-transform: uppercase;
 }
 
+.modal__options {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 .modal__options-title {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 23px;
   font-size: 15px;
   line-height: 30px;
   font-weight: 400;
   color: @grey-color;
 }
 
+.modal__options-list {
+  .list();
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 31px;
+}
+
+.modal__option-item {
+  box-sizing: border-box;
+  width: 31%;
+  height: 52px;
+}
+
 .modal__option-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
   line-height: 16px;
   color: @grey-color;
+  border: 2px solid rgba(@grey-color, 0.1);
+  cursor: pointer;
+
+  &:hover {
+    border-color: rgba(@grey-color, 0.3);
+  }
+
+  &:active {
+    border-color: #62d1ba;
+  }
+}
+
+.modal__option-input:checked + .modal__option-label {
+  border-color: #62d1ba;
 }
 
 .modal__button {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 18px;
+  padding-right: 30px;
+  padding-bottom: 18px;
+  padding-left: 30px;
   line-height: 16px;
   font-weight: 700;
   color: @white-color;
   background-color: @green-color;
   text-transform: uppercase;
+  border: none;
 }
 
 @media (min-width: @tablet-width) {
+  .modal {
+    width: 566px;
+    max-width: none;
+    padding-top: 33px;
+    padding-left: 104px;
+    padding-right: 104px;
+  }
+
   .modal__title {
+    margin-bottom: 14px;
     font-size: 30px;
     line-height: 57px;
   }
 
   .modal__options-title {
+    margin-bottom: 21px;
     font-size: 17px;
+  }
+
+  .modal__options-list {
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+
+  .modal__option-item {
+    width: 112px;
+  }
+
+  .modal__button {
+    width: 350px;
   }
 }

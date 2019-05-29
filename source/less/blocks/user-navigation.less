@@ -1,11 +1,124 @@
-.user-navigation__search {
+.user-navigation__link {
+  display: block;
+  padding-top: 26px;
+  padding-bottom: 28px;
   color: @black-color;
+  border-bottom: 1px solid @alt-light-gray-color;
+
+  &:hover .user-navigation__icon,
+  &:focus .user-navigation__icon {
+    fill: @green-color;
+    opacity: 1;
+  }
+
+  &:active .user-navigation__icon {
+    opacity: 0.3;
+  }
+
+  &:hover .user-navigation__cart-text,
+  &:focus .user-navigation__cart-text {
+    opacity: 0.6;
+  }
+
+  &:active .user-navigation__cart-text {
+    opacity: 0.3;
+  }
 }
 
-.user-navigation__cart {
-  color: @black-color;
+.user-navigation__link-text {
+  position: relative;
+  .container(260px, 45px, 30px);
+  pointer-events: none;
 }
 
 .user-navigation__icon {
+  position: absolute;
+  fill: #231f20;
   opacity: 0.2;
+
+  &--search {
+    top: 5px;
+    left: 2px;
+  }
+
+  &--cart {
+    top: 4px;
+    left: 0;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .user-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgba(@grey-color, 0.1);
+  }
+
+  .user-navigation__link {
+    box-sizing: border-box;
+    padding: 0;
+    border-bottom: none;
+
+    &--search {
+      width: 84px;
+      border-right: 1px solid rgba(@grey-color, 0.1);
+      border-left: 1px solid rgba(@grey-color, 0.1);
+    }
+
+    &--cart {
+      width: 314px;
+      padding-top: 31px;
+      padding-right: 50px;
+      padding-bottom: 31px;
+      padding-left: 31px;
+    }
+  }
+
+  .user-navigation__link-text {
+    width: auto;
+    padding-right: 0;
+
+    &--search {
+      padding-left: 0;
+    }
+
+    &--cart {
+      padding-left: 51px;
+    }
+  }
+
+  .user-navigation__icon {
+    &--search {
+      top: 36px;
+      left: 33px;
+    }
+  }
+
+  .user-navigation__search-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .user-navigation {
+    border-bottom: none;
+  }
+
+  .user-navigation__link {
+    &--cart {
+      width: 301px;
+      padding-right: 35px;
+      padding-bottom: 33px;
+    }
+  }
 }

@@ -15,47 +15,59 @@
     </div>
 
     <header class="main-header">
-      <a class="main-header__logo" href="index.html">
-        <picture>
-          <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
-          <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
-          <img class="main-header__logo-image" src="img/logo-mobile.svg" width="86" height="35" alt="Логотип магазина «Мишка»">
-        </picture>
-      </a>
-      <nav class="main-navigation">
+      <div class="main-header__logo-container">
+        <a class="main-header__logo" href="index.html">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+            <img class="main-header__logo-image" src="img/logo-mobile.svg" width="86" height="35" alt="Логотип магазина «Мишка»">
+          </picture>
+        </a>
+      </div>
+      <nav class="main-header__main-navigation main-navigation main-navigation--closed main-navigation--no-js">
         <button class="main-navigation__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
         <ul class="main-navigation__list">
           <li class="main-navigation__item">
-            <a class="main-navigation__link">Каталог товаров</a>
+            <a class="main-navigation__link">
+              <span class="main-navigation__link-text">Каталог товаров</span>
+            </a>
           </li>
           <li class="main-navigation__item">
-            <a class="main-navigation__link" href="form.html">Вязание на заказ</a>
+            <a class="main-navigation__link" href="form.html">
+              <span class="main-navigation__link-text">Вязание на заказ</span>
+            </a>
           </li>
         </ul>
       </nav>
-      <div class="user-navigation">
-        <a class="user-navigation__search" href="#">
-          <svg class="user-navigation__icon" width="18" height="18">
-            <use xlink:href="#sprite-icon-search"></use>
-          </svg>
-          <span class="user-navigation__search-text">Поиск по сайту</span>
+      <div class="main-header__user-navigation user-navigation">
+        <a class="user-navigation__link user-navigation__link--search" href="#">
+          <span class="user-navigation__link-text user-navigation__link-text--search">
+            <svg class="user-navigation__icon user-navigation__icon--search" width="18" height="18">
+              <use xlink:href="#sprite-icon-search"></use>
+            </svg>
+            <span class="user-navigation__search-text">Поиск по сайту</span>
+          </span>
         </a>
-        <a class="user-navigation__cart" href="#">
-          <svg class="user-navigation__icon" width="21" height="18">
-            <use xlink:href="#sprite-icon-cart"></use>
-          </svg>
-          Корзина: пока пуста
+        <a class="user-navigation__link user-navigation__link--cart" href="#">
+          <span class="user-navigation__link-text user-navigation__link-text--cart">
+            <svg class="user-navigation__icon user-navigation__icon--cart" width="21" height="18">
+              <use xlink:href="#sprite-icon-cart"></use>
+            </svg>
+            <span class="user-navigation__cart-text">Корзина: пока пуста</span>
+          </span>
         </a>
       </div>
-      <ul class="additional-navigation">
-        <li class="additional-navigation__item">
-          <a class="additional-navigation__link" href="#">Новые поступления</a>
-        </li>
-        <li class="additional-navigation__item">
-          <a class="additional-navigation__link" href="#">Распродажа</a>
-        </li>
-      </ul>
-      <p class="main-header__shipping-text">Бесплатная доставка по России</p>
+      <div class="main-header__container">
+        <ul class="main-header__additional-navigation additional-navigation">
+          <li class="additional-navigation__item">
+            <a class="additional-navigation__link" href="#">Новые поступления</a>
+          </li>
+          <li class="additional-navigation__item">
+            <a class="additional-navigation__link" href="#">Распродажа</a>
+          </li>
+        </ul>
+        <p class="main-header__shipping-text">Бесплатная доставка по России</p>
+      </div>
     </header>
 
     <main class="main-content">
@@ -63,12 +75,8 @@
         <h1 class="main-content__title">Каталог товаров</h1>
       </div>
       <ul class="catalog">
-        <li class="catalog-item">
-          <a href="#">
-            <h2 class="catalog-item__title">Зайчик-попрыгайчик</h2>
-          </a>
-          <p class="catalog-item__description">Рост 30 см, вес 200 г</p>
-          <a href="#">
+        <li class="catalog__catalog-item catalog-item">
+          <a class="catalog-item__image-link" href="#">
             <picture>
               <source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
@@ -79,21 +87,25 @@
               <img class="catalog-item__image" src="img/photo-hare-mobile@1x.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x" alt="Зайчик-попрыгайчик">
             </picture>
           </a>
-          <span class="catalog-item__price">1 200 руб.</span>
-          <a class="catalog-item__button" href="#">
-            <span class="visually-hidden">Добавить в корзину</span>
-            <svg class="catalog-item__cart-icon" width="20" height="19">
-              <use xlink:href="#sprite-icon-cart"></use>
-            </svg>
-          </a>
+          <div class="catalog-item__container">
+            <a class="catalog-item__title-link" href="#">
+              <h2 class="catalog-item__title">Зайчик-попрыгайчик</h2>
+            </a>
+            <p class="catalog-item__description">Рост 30 см, вес 200 г</p>
+            <div class="catalog-item__bottom">
+              <span class="catalog-item__price">1 200 руб.</span>
+              <a class="catalog-item__button" href="#">
+                <span class="visually-hidden">Добавить в корзину</span>
+                <svg class="catalog-item__cart-icon" width="20" height="19">
+                  <use xlink:href="#sprite-icon-cart"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
         </li>
 
-        <li class="catalog-item">
-          <a href="#">
-            <h2 class="catalog-item__title">Корзинка для белья</h2>
-          </a>
-          <p class="catalog-item__description">Диаметр 15 см, высота 10 см</p>
-          <a href="#">
+        <li class="catalog__catalog-item catalog-item">
+          <a class="catalog-item__image-link" href="#">
             <picture>
               <source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-bowl-desktop@1x.webp 1x, img/photo-bowl-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-bowl-tablet@1x.webp 1x, img/photo-bowl-tablet@2x.webp 2x">
@@ -104,21 +116,25 @@
               <img class="catalog-item__image" src="img/photo-bowl-mobile@1x.jpg" srcset="img/photo-bowl-mobile@2x.jpg 2x" alt="Корзинка для белья">
             </picture>
           </a>
-          <span class="catalog-item__price">690 руб.</span>
-          <a class="catalog-item__button" href="#">
-            <span class="visually-hidden">Добавить в корзину</span>
-            <svg class="catalog-item__cart-icon" width="20" height="19">
-              <use xlink:href="#sprite-icon-cart"></use>
-            </svg>
-          </a>
+          <div class="catalog-item__container">
+            <a class="catalog-item__title-link" href="#">
+              <h2 class="catalog-item__title">Корзинка для белья</h2>
+            </a>
+            <p class="catalog-item__description">Диаметр 15 см, высота 10 см</p>
+            <div class="catalog-item__bottom">
+              <span class="catalog-item__price">690 руб.</span>
+              <a class="catalog-item__button" href="#">
+                <span class="visually-hidden">Добавить в корзину</span>
+                <svg class="catalog-item__cart-icon" width="20" height="19">
+                  <use xlink:href="#sprite-icon-cart"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
         </li>
 
-        <li class="catalog-item">
-          <a href="#">
-            <h2 class="catalog-item__title">Большая корзинка для игрушек</h2>
-          </a>
-          <p class="catalog-item__description">Диаметр 30 см, высота 30 см</p>
-          <a href="#">
+        <li class="catalog__catalog-item catalog-item">
+          <a class="catalog-item__image-link" href="#">
             <picture>
               <source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-toys-desktop@1x.webp 1x, img/photo-toys-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-toys-tablet@1x.webp 1x, img/photo-toys-tablet@2x.webp 2x">
@@ -129,13 +145,21 @@
               <img class="catalog-item__image" src="img/photo-toys-mobile@1x.jpg" srcset="img/photo-toys-mobile@2x.jpg 2x" alt="Большая корзинка для игрушек">
             </picture>
           </a>
-          <span class="catalog-item__price">1 500 руб.</span>
-          <a class="catalog-item__button" href="#">
-            <span class="visually-hidden">Добавить в корзину</span>
-            <svg class="catalog-item__cart-icon" width="20" height="19">
-              <use xlink:href="#sprite-icon-cart"></use>
-            </svg>
-          </a>
+          <div class="catalog-item__container">
+            <a class="catalog-item__title-link" href="#">
+              <h2 class="catalog-item__title">Большая корзинка для&nbsp;игрушек</h2>
+            </a>
+            <p class="catalog-item__description">Диаметр 30 см, высота 30 см</p>
+            <div class="catalog-item__bottom">
+              <span class="catalog-item__price">1 500 руб.</span>
+              <a class="catalog-item__button" href="#">
+                <span class="visually-hidden">Добавить в корзину</span>
+                <svg class="catalog-item__cart-icon" width="20" height="19">
+                  <use xlink:href="#sprite-icon-cart"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
         </li>
       </ul>
 
@@ -161,69 +185,72 @@
     </main>
 
     <footer class="main-footer">
-      <a class="main-footer__logo" href="index.html">
-        <span class="visually-hidden">Логотип магазина «Мишка»</span>
-        <svg class="main-footer__logo-image" width="102" height="34">
-          <use xlink:href="#sprite-logo-footer"></use>
-        </svg>
-      </a>
-      <ul class="social-list">
-        <li class="social-list__item">
-          <a class="social-list__link" href="#">
-            <span class="visually-hidden">Мы в Инстаграме</span>
-            <svg class="social-list__link-icon" width="22" height="21">
-              <use xlink:href="#sprite-icon-insta"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link" href="#">
-            <span class="visually-hidden">Мы в Фейсбуке</span>
-            <svg class="social-list__link-icon" width="15" height="28">
-              <use xlink:href="#sprite-icon-fb"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link" href="#">
-            <span class="visually-hidden">Мы в Твиттере</span>
-            <svg class="social-list__link-icon" width="23" height="20">
-              <use xlink:href="#sprite-icon-twitter"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-      <a class="copyright" href="https://htmlacademy.ru/intensive/adaptive">
-        <span class="copyright__text">Разработано</span>
-        <svg class="copyright__logo" width="27" height="34">
-          <use xlink:href="#sprite-logo-htmlacademy"></use>
-        </svg>
-      </a>
+      <div class="main-footer__container">
+        <a class="main-footer__logo" href="index.html">
+          <span class="visually-hidden">Логотип магазина «Мишка»</span>
+          <svg class="main-footer__logo-image" width="102" height="34">
+            <use xlink:href="#sprite-logo-footer"></use>
+          </svg>
+        </a>
+        <ul class="social-list">
+          <li class="social-list__item social-list__item--insta">
+            <a class="social-list__link" href="#">
+              <span class="visually-hidden">Мы в Инстаграме</span>
+              <svg class="social-list__link-icon" width="22" height="21">
+                <use xlink:href="#sprite-icon-insta"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-list__item social-list__item--fb">
+            <a class="social-list__link" href="#">
+              <span class="visually-hidden">Мы в Фейсбуке</span>
+              <svg class="social-list__link-icon" width="15" height="28">
+                <use xlink:href="#sprite-icon-fb"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-list__item social-list__item--twitter">
+            <a class="social-list__link" href="#">
+              <span class="visually-hidden">Мы в Твиттере</span>
+              <svg class="social-list__link-icon" width="23" height="20">
+                <use xlink:href="#sprite-icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <a class="copyright" href="https://htmlacademy.ru/intensive/adaptive">
+          <span class="copyright__text">Разработано</span>
+          <svg class="copyright__logo" width="27" height="34">
+            <use xlink:href="#sprite-logo-htmlacademy"></use>
+          </svg>
+        </a>
+      </div>
     </footer>
 
-    <section class="modal">
-      <h2 class="modal__title">Добавить в корзину</h2>
+    <section class="modal js-catalog-modal">
+      <h2 class="modal__title">Добавить в&nbsp;корзину</h2>
       <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
         <fieldset class="modal__options">
           <legend class="modal__options-title">Выберите размер:</legend>
           <ul class="modal__options-list">
             <li class="modal__option-item">
-              <label class="modal__option-label" for="size-s">S</label>
               <input class="visually-hidden modal__option-input" type="radio" name="size" id="size-s" value="S" aria-label="Размер S" checked>
+              <label class="modal__option-label" for="size-s">S</label>
             </li>
             <li class="modal__option-item">
-              <label class="modal__option-label" for="size-m">M</label>
               <input class="visually-hidden modal__option-input" type="radio" name="size" id="size-m" value="M" aria-label="Размер M">
+              <label class="modal__option-label" for="size-m">M</label>
             </li>
             <li class="modal__option-item">
-              <label class="modal__option-label" for="size-l">L</label>
               <input class="visually-hidden modal__option-input" type="radio" name="size" id="size-l" value="L" aria-label="Размер L">
+              <label class="modal__option-label" for="size-l">L</label>
             </li>
           </ul>
         </fieldset>
         <button class="modal__button" type="submit">Добавить</button>
       </form>
     </section>
+    <div class="modal-overlay js-catalog-overlay"></div>
 
     <script src="js/picturefill.min.js"></script>
     <script src="js/script.min.js"></script>
