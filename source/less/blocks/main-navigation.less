@@ -1,15 +1,127 @@
+.main-navigation {
+  position: relative;
+
+  &--opened {
+    .main-navigation__toggle {
+      background-image: url("../img/icon-menu-close.svg");
+      background-position: 0 0;
+    }
+  }
+
+  &--closed {
+    .main-navigation__toggle {
+      background-image: url("../img/icon-menu-open.svg");
+      background-position: 0 3px;
+    }
+  }
+}
+
+.main-navigation__toggle {
+  position: absolute;
+  top: -50px;
+  right: 30px;
+  width: 21px;
+  height: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.main-navigation__list {
+  .list();
+  border-top: 1px solid @alt-light-gray-color;
+}
+
+.main-navigation__item {
+  border-bottom: 1px solid @alt-light-gray-color;
+}
+
 .main-navigation__link {
+  display: block;
+  padding-top: 26px;
+  padding-bottom: 28px;
   color: @black-color;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.main-navigation__link-text {
+  .container(260px, 45px, 30px);
+  pointer-events: none;
+}
+
+@media (max-width: @mobile-width-only) {
+  .main-navigation--closed .main-navigation__item {
+    display: none;
+  }
+
+  .main-navigation--closed + .user-navigation {
+    display: none;
+  }
+
+  .main-navigation--no-js .main-navigation__item {
+    display: block;
+  }
+
+  .main-navigation--no-js + .user-navigation {
+    display: block;
+  }
+
+  .main-navigation--no-js .main-navigation__toggle {
+    display: none;
+  }
 }
 
 @media (min-width: @tablet-width) {
   .main-navigation {
     font-size: 15px;
   }
+
+  .main-navigation__toggle {
+    display: none;
+  }
+
+  .main-navigation__list {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: none;
+  }
+
+  .main-navigation__item {
+    margin-right: 36px;
+    border-bottom: none;
+  }
+
+  .main-navigation__link {
+    padding: 0;
+  }
+
+  .main-navigation__link-text {
+    .container(auto, 0, 0);
+  }
 }
 
 @media (min-width: @desktop-width) {
   .main-navigation {
     font-size: 17px;
+  }
+
+  .main-navigation__item {
+    margin-right: 0;
+    padding-top: 31px;
+    padding-right: 36px;
+    padding-bottom: 33px;
+    padding-left: 34px;
+
+    &:first-child {
+      border-right: 1px solid rgba(@grey-color, 0.1);
+    }
   }
 }

@@ -1,5 +1,40 @@
 .copyright {
+  display: flex;
+  justify-content: center;
+  width: 188px;
+  margin: 0 auto;
+  padding-right: 1px;
   font-size: 19px;
   line-height: 18px;
   color: @black-color;
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__text {
+  margin-right: 29px;
+  padding-top: 5px;
+  pointer-events: none;
+}
+
+.copyright__logo {
+  flex-shrink: 0;
+  fill: #63d1bb;
+  pointer-events: none;
+}
+
+@media (min-width: @tablet-width) {
+  .copyright {
+    width: 183px;
+    margin: 0;
+    margin-top: 7px;
+    padding-right: 0;
+
+    &:hover .copyright__logo,
+    &:focus .copyright__logo {
+      fill: #46c1ae;
+    }
+  }
 }

@@ -1,14 +1,24 @@
 .additional-navigation {
-  display: none;
+  .list();
+  margin-left: auto;
+  padding-top: 17px;
+  padding-left: 50px;
+  font-size: 15px;
 }
 
-@media (min-width: @desktop-width) {
-  .additional-navigation {
-    display: block;
-    font-size: 15px;
+.additional-navigation__item {
+  margin-right: 61px;
+}
+
+.additional-navigation__link {
+  color: @black-color;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
   }
 
-  .additional-navigation__link {
-    color: @black-color;
+  &:active {
+    opacity: 0.3;
   }
 }

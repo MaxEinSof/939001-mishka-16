@@ -1,23 +1,64 @@
+.bestseller {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+  padding-top: 27px;
+  padding-right: 30px;
+  padding-bottom: 41px;
+  padding-left: 30px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    background-image: url("../img/bg-zigzag-line.svg");
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+  }
+}
+
 .bestseller__title {
+  order: 2;
+  margin: 0;
+  margin-bottom: 23px;
   font-size: 17px;
   line-height: 20px;
   color: @green-color;
   text-transform: uppercase;
 }
 
+.bestseller__subtitle-link {
+  order: 1;
+  margin-bottom: 5px;
+}
+
 .bestseller__subtitle {
+  margin: 0;
   font-size: 25px;
   line-height: 30px;
   color: @black-color;
 }
 
+.bestseller__container {
+  order: 3;
+}
+
 .bestseller__description {
+  margin: 0;
+  margin-bottom: 18px;
   font-size: 15px;
   font-weight: 400;
   color: @grey-color;
 }
 
 .bestseller__parameters {
+  width: 100%;
+  margin-bottom: 26px;
   font-size: 15px;
   line-height: 20px;
   font-weight: 400;
@@ -25,17 +66,72 @@
 }
 
 .bestseller__parameter-name {
+  width: 37%;
+  padding: 0;
+  padding-top: 7px;
+  padding-bottom: 10px;
   font-weight: 400;
   text-align: left;
+  border-bottom: 1px solid @alt-light-gray-color;
+}
+
+.bestseller__parameter-value {
+  width: 63%;
+  padding: 0;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid @alt-light-gray-color;
+}
+
+.bestseller__image-link {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.bestseller__image {
+  display: block;
+  width: 100%;
 }
 
 .bestseller__price {
+  margin: 0;
+  margin-bottom: 26px;
   color: @grey-color;
+  text-align: center;
+}
+
+.bestseller__button {
+  width: 100%;
 }
 
 @media (min-width: @tablet-width) {
+  .bestseller {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    padding-top: 35px;
+    padding-right: 50px;
+    padding-bottom: 68px;
+    padding-left: 48px;
+
+    &::after {
+      height: 15px;
+    }
+  }
+
   .bestseller__title {
+    width: 80px;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding-top: 11px;
+    padding-right: 23px;
     line-height: 17px;
+    text-align: center;
+  }
+
+  .bestseller__subtitle-link {
+    max-width: 75%;
+    margin-bottom: 0;
   }
 
   .bestseller__subtitle {
@@ -43,19 +139,104 @@
     line-height: 50px;
   }
 
+  .bestseller__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 412px;
+    padding-top: 49px;
+    padding-right: 378px;
+  }
+
   .bestseller__description {
+    margin-bottom: 36px;
     font-size: 17px;
     line-height: 30px;
   }
 
+  .bestseller__parameters {
+    margin-bottom: 54px;
+  }
+
+  .bestseller__parameter-name {
+    width: 33%;
+  }
+
+  .bestseller__parameter-value {
+    width: 67%;
+  }
+
+  .bestseller__image-link {
+    position: absolute;
+    top: 57px;
+    right: 1px;
+  }
+
   .bestseller__price {
+    margin-bottom: 34px;
     font-size: 20px;
+  }
+
+  .bestseller__button {
+    margin-top: auto;
   }
 }
 
 @media (min-width: @desktop-width) {
+  .bestseller {
+    box-sizing: border-box;
+    width: @desktop-width;
+    margin: 0 auto;
+    margin-bottom: 58px;
+    padding-top: 52px;
+    padding-bottom: 98px;
+    padding-left: 50px;
+
+    &::after {
+      left: 50px;
+      width: 1050px;
+      height: 23px;
+      background-position: 25px 0;
+    }
+  }
+
+  .bestseller__title {
+    order: 1;
+    margin-left: 0;
+    padding-top: 15px;
+    padding-right: 49px;
+    padding-left: 42px;
+  }
+
+  .bestseller__subtitle-link {
+    order: 2;
+    max-width: 530px;
+  }
+
   .bestseller__subtitle {
     font-size: 53px;
     line-height: 57px;
+  }
+
+  .bestseller__container {
+    position: static;
+    min-height: 478px;
+    padding-right: 583px;
+    padding-left: 175px;
+  }
+
+  .bestseller__description {
+    margin-bottom: 48px;
+  }
+
+  .bestseller__parameters {
+    margin-bottom: 108px;
+  }
+
+  .bestseller__image-link {
+    top: 0;
+    right: 50px;
+    z-index: -1;
   }
 }
